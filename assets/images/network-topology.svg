@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" fill="none">
+  <defs>
+    <linearGradient id="netBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070F1E"/>
+      <stop offset="100%" stop-color="#020610"/>
+    </linearGradient>
+    <linearGradient id="huaweiRed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EF4444"/>
+      <stop offset="100%" stop-color="#991B1B"/>
+    </linearGradient>
+    <linearGradient id="blueNode" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#1D4ED8"/>
+    </linearGradient>
+    <linearGradient id="cyanNode" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22D3EE"/>
+      <stop offset="100%" stop-color="#0891B2"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="360" rx="12" fill="url(#netBg)"/>
+  <rect x="1" y="1" width="598" height="358" rx="11" stroke="#1E293B" stroke-width="1.5"/>
+
+  <!-- Header -->
+  <rect width="600" height="36" rx="12" fill="#0B132B"/>
+  <path d="M0 24 H600 V36 H0 Z" fill="#0B132B"/>
+  <circle cx="20" cy="18" r="4.5" fill="#EF4444"/>
+  <circle cx="36" cy="18" r="4.5" fill="#F59E0B"/>
+  <circle cx="52" cy="18" r="4.5" fill="#10B981"/>
+  <text x="80" y="22" fill="#94A3B8" font-family="'JetBrains Mono', Consolas, monospace" font-size="12">huawei_ensp // enterprise_campus_infrastructure.topo [VLANs, NAT, ACLs, STP]</text>
+
+  <!-- Cloud / WAN Gateway -->
+  <ellipse cx="300" cy="65" rx="50" ry="20" fill="#1E293B" stroke="#38BDF8" stroke-width="1.5" stroke-dasharray="3 3"/>
+  <text x="300" y="69" fill="#E2E8F0" font-family="monospace" font-size="11" font-weight="700" text-anchor="middle">WAN / Internet</text>
+
+  <!-- WAN Trunk line -->
+  <line x1="300" y1="85" x2="300" y2="120" stroke="#38BDF8" stroke-width="2"/>
+  <text x="310" y="105" fill="#38BDF8" font-family="monospace" font-size="9">NAPT / Static Route</text>
+
+  <!-- Core Router (AR2220) -->
+  <rect x="250" y="120" width="100" height="42" rx="6" fill="#1E293B" stroke="#EF4444" stroke-width="2"/>
+  <circle cx="265" cy="141" r="5" fill="#EF4444"/>
+  <text x="278" y="137" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="11" font-weight="700">R1 (Core GW)</text>
+  <text x="278" y="150" fill="#94A3B8" font-family="monospace" font-size="9">AR2220 · DHCP</text>
+
+  <!-- Redundant Links to Core Switch -->
+  <line x1="270" y1="162" x2="200" y2="205" stroke="#60A5FA" stroke-width="1.8"/>
+  <line x1="330" y1="162" x2="400" y2="205" stroke="#60A5FA" stroke-width="1.8"/>
+
+  <!-- Core Layer Switch 1 -->
+  <rect x="150" y="200" width="100" height="38" rx="6" fill="#1E293B" stroke="#38BDF8" stroke-width="1.5"/>
+  <circle cx="165" cy="219" r="4" fill="#38BDF8"/>
+  <text x="175" y="217" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="10" font-weight="700">SW-Core-01</text>
+  <text x="175" y="229" fill="#94A3B8" font-family="monospace" font-size="8">S5700 · MSTP Root</text>
+
+  <!-- Core Layer Switch 2 -->
+  <rect x="350" y="200" width="100" height="38" rx="6" fill="#1E293B" stroke="#38BDF8" stroke-width="1.5"/>
+  <circle cx="365" cy="219" r="4" fill="#38BDF8"/>
+  <text x="375" y="217" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="10" font-weight="700">SW-Core-02</text>
+  <text x="375" y="229" fill="#94A3B8" font-family="monospace" font-size="8">S5700 · Eth-Trunk</text>
+
+  <!-- Eth-Trunk / Inter-switch link -->
+  <line x1="250" y1="219" x2="350" y2="219" stroke="#34D399" stroke-width="2" stroke-dasharray="4 2"/>
+  <text x="300" y="214" fill="#34D399" font-family="monospace" font-size="8" text-anchor="middle">802.1Q Trunk</text>
+
+  <!-- Lines down to Access / Department VLANs -->
+  <line x1="170" y1="238" x2="100" y2="280" stroke="#94A3B8" stroke-width="1.5"/>
+  <line x1="200" y1="238" x2="230" y2="280" stroke="#94A3B8" stroke-width="1.5"/>
+  <line x1="400" y1="238" x2="370" y2="280" stroke="#94A3B8" stroke-width="1.5"/>
+  <line x1="430" y1="238" x2="500" y2="280" stroke="#94A3B8" stroke-width="1.5"/>
+
+  <!-- Department 1: Engineering VLAN 10 -->
+  <rect x="40" y="280" width="115" height="56" rx="6" fill="#0F172A" stroke="#22D3EE" stroke-width="1.2"/>
+  <text x="97" y="298" fill="#22D3EE" font-family="system-ui, sans-serif" font-size="10" font-weight="700" text-anchor="middle">VLAN 10: R&amp;D</text>
+  <text x="97" y="312" fill="#94A3B8" font-family="monospace" font-size="8" text-anchor="middle">192.168.10.0/24</text>
+  <text x="97" y="325" fill="#34D399" font-family="monospace" font-size="8" text-anchor="middle">ACL 3001 Applied</text>
+
+  <!-- Department 2: Management VLAN 20 -->
+  <rect x="175" y="280" width="115" height="56" rx="6" fill="#0F172A" stroke="#38BDF8" stroke-width="1.2"/>
+  <text x="232" y="298" fill="#38BDF8" font-family="system-ui, sans-serif" font-size="10" font-weight="700" text-anchor="middle">VLAN 20: Exec</text>
+  <text x="232" y="312" fill="#94A3B8" font-family="monospace" font-size="8" text-anchor="middle">192.168.20.0/24</text>
+  <text x="232" y="325" fill="#38BDF8" font-family="monospace" font-size="8" text-anchor="middle">Priority QoS</text>
+
+  <!-- Department 3: IT Staff VLAN 30 -->
+  <rect x="310" y="280" width="115" height="56" rx="6" fill="#0F172A" stroke="#818CF8" stroke-width="1.2"/>
+  <text x="367" y="298" fill="#818CF8" font-family="system-ui, sans-serif" font-size="10" font-weight="700" text-anchor="middle">VLAN 30: IT / Sec</text>
+  <text x="367" y="312" fill="#94A3B8" font-family="monospace" font-size="8" text-anchor="middle">192.168.30.0/24</text>
+  <text x="367" y="325" fill="#A7F3D0" font-family="monospace" font-size="8" text-anchor="middle">SSH &amp; Telnet Admin</text>
+
+  <!-- Department 4: Guest / DMZ VLAN 99 -->
+  <rect x="445" y="280" width="115" height="56" rx="6" fill="#0F172A" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="502" y="298" fill="#F59E0B" font-family="system-ui, sans-serif" font-size="10" font-weight="700" text-anchor="middle">VLAN 99: DMZ</text>
+  <text x="502" y="312" fill="#94A3B8" font-family="monospace" font-size="8" text-anchor="middle">172.16.99.0/24</text>
+  <text x="502" y="325" fill="#EF4444" font-family="monospace" font-size="8" text-anchor="middle">Isolated by ACL</text>
+</svg>

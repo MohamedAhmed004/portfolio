@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" fill="none">
+  <defs>
+    <linearGradient id="psBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A1128"/>
+      <stop offset="50%" stop-color="#0D1B2A"/>
+      <stop offset="100%" stop-color="#050C1A"/>
+    </linearGradient>
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#2563EB"/>
+    </linearGradient>
+    <linearGradient id="dangerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EF4444"/>
+      <stop offset="100%" stop-color="#DC2626"/>
+    </linearGradient>
+    <linearGradient id="safeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="600" height="360" rx="12" fill="url(#psBg)"/>
+  <rect x="1" y="1" width="598" height="358" rx="11" stroke="#1E293B" stroke-width="1.5"/>
+
+  <!-- Window Header Bar -->
+  <rect width="600" height="36" rx="12" fill="#0B132B"/>
+  <path d="M0 24 H600 V36 H0 Z" fill="#0B132B"/>
+  <circle cx="20" cy="18" r="4.5" fill="#EF4444"/>
+  <circle cx="36" cy="18" r="4.5" fill="#F59E0B"/>
+  <circle cx="52" cy="18" r="4.5" fill="#10B981"/>
+  <text x="80" y="22" fill="#94A3B8" font-family="'JetBrains Mono', Consolas, monospace" font-size="12">phish-shield // offline_url_detector.py — Random Forest [549k URLs]</text>
+
+  <!-- Main Analysis Window Left (URL inspection & features) -->
+  <rect x="24" y="54" width="340" height="74" rx="8" fill="#111827" stroke="#1E293B"/>
+  <text x="38" y="76" fill="#64748B" font-family="'JetBrains Mono', Consolas, monospace" font-size="10" font-weight="600">INPUT TARGET URL</text>
+  <rect x="36" y="86" width="316" height="30" rx="6" fill="#090D16" stroke="#334155"/>
+  <text x="46" y="106" fill="#38BDF8" font-family="'JetBrains Mono', Consolas, monospace" font-size="11">https://secure-login.paypa1-update.com/auth</text>
+
+  <!-- 20 Features Inspection Matrix -->
+  <rect x="24" y="142" width="340" height="196" rx="8" fill="#111827" stroke="#1E293B"/>
+  <text x="38" y="164" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="12" font-weight="700">EXTRACTED STATIC HEURISTICS (20 VECTORS)</text>
+
+  <!-- Feature Row 1 -->
+  <rect x="38" y="178" width="150" height="32" rx="4" fill="#0F172A" stroke="#1E293B"/>
+  <text x="46" y="194" fill="#64748B" font-family="monospace" font-size="10">Shannon Entropy</text>
+  <text x="46" y="206" fill="#F87171" font-family="monospace" font-size="11" font-weight="700">4.18 bits [HIGH]</text>
+
+  <rect x="198" y="178" width="150" height="32" rx="4" fill="#0F172A" stroke="#1E293B"/>
+  <text x="206" y="194" fill="#64748B" font-family="monospace" font-size="10">Target Keyword Typos</text>
+  <text x="206" y="206" fill="#F87171" font-family="monospace" font-size="11" font-weight="700">paypa1 (Homoglyph)</text>
+
+  <!-- Feature Row 2 -->
+  <rect x="38" y="218" width="150" height="32" rx="4" fill="#0F172A" stroke="#1E293B"/>
+  <text x="46" y="234" fill="#64748B" font-family="monospace" font-size="10">Subdomain Depth</text>
+  <text x="46" y="246" fill="#F87171" font-family="monospace" font-size="11" font-weight="700">3 levels</text>
+
+  <rect x="198" y="218" width="150" height="32" rx="4" fill="#0F172A" stroke="#1E293B"/>
+  <text x="206" y="234" fill="#64748B" font-family="monospace" font-size="10">TLD Risk Factor</text>
+  <text x="206" y="246" fill="#FBBF24" font-family="monospace" font-size="11" font-weight="700">Elevated (.com proxy)</text>
+
+  <!-- Feature Row 3 -->
+  <rect x="38" y="258" width="150" height="32" rx="4" fill="#0F172A" stroke="#1E293B"/>
+  <text x="46" y="274" fill="#64748B" font-family="monospace" font-size="10">IP Host Literal</text>
+  <text x="46" y="286" fill="#34D399" font-family="monospace" font-size="11" font-weight="700">0 (FQDN format)</text>
+
+  <rect x="198" y="258" width="150" height="32" rx="4" fill="#0F172A" stroke="#1E293B"/>
+  <text x="206" y="274" fill="#64748B" font-family="monospace" font-size="10">GroupKFold Validation</text>
+  <text x="206" y="286" fill="#38BDF8" font-family="monospace" font-size="11" font-weight="700">Zero Host Leakage</text>
+
+  <!-- Unit Test Badge -->
+  <g transform="translate(38, 302)">
+    <rect width="180" height="24" rx="4" fill="#064E3B"/>
+    <text x="12" y="16" fill="#6EE7B7" font-family="monospace" font-size="10" font-weight="600">✓ 41 PYTEST SUITES PASS</text>
+  </g>
+
+  <!-- Right Analysis Card (ML Probability Gauge & Verdict) -->
+  <rect x="380" y="54" width="196" height="284" rx="8" fill="#111827" stroke="#1E293B"/>
+  
+  <text x="400" y="80" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="12" font-weight="700">INFERENCE ENGINE</text>
+  
+  <!-- Gauge Circle -->
+  <circle cx="478" cy="155" r="54" stroke="#1E293B" stroke-width="10" fill="none"/>
+  <circle cx="478" cy="155" r="54" stroke="url(#dangerGrad)" stroke-width="10" stroke-dasharray="270 340" stroke-linecap="round" fill="none" transform="rotate(-90 478 155)"/>
+  
+  <text x="478" y="152" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="24" font-weight="800" text-anchor="middle">98.4%</text>
+  <text x="478" y="170" fill="#F87171" font-family="monospace" font-size="10" font-weight="700" text-anchor="middle">PHISHING PROB</text>
+
+  <!-- Verdict Banner -->
+  <rect x="396" y="225" width="164" height="36" rx="6" fill="#7F1D1D" stroke="#DC2626"/>
+  <text x="478" y="248" fill="#FEE2E2" font-family="system-ui, sans-serif" font-size="12" font-weight="800" text-anchor="middle" letter-spacing="1">THREAT DETECTED</text>
+
+  <!-- Offline status -->
+  <text x="478" y="285" fill="#64748B" font-family="monospace" font-size="10" text-anchor="middle">100% Offline Static Run</text>
+  <text x="478" y="300" fill="#38BDF8" font-family="monospace" font-size="10" text-anchor="middle">Scikit-learn · Random Forest</text>
+  <text x="478" y="315" fill="#64748B" font-family="monospace" font-size="9" text-anchor="middle">Zero Web Requests Made</text>
+</svg>

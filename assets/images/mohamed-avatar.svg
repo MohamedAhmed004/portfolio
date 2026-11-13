@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="50%" stop-color="#0B132B"/>
+      <stop offset="100%" stop-color="#070A12"/>
+    </linearGradient>
+    <linearGradient id="cyanBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22D3EE"/>
+      <stop offset="50%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#2563EB"/>
+    </linearGradient>
+    <linearGradient id="emerald" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34D399"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <filter id="glowAvatar" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.25"/>
+      <stop offset="70%" stop-color="#1E3A8A" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Ambient Glow -->
+  <circle cx="200" cy="200" r="180" fill="url(#centerGlow)"/>
+
+  <!-- Outer Technical Ring (Compass/Protocol Scale) -->
+  <circle cx="200" cy="200" r="170" stroke="#1E293B" stroke-width="2"/>
+  <circle cx="200" cy="200" r="170" stroke="url(#cyanBlue)" stroke-width="2" stroke-dasharray="16 28" stroke-linecap="round" opacity="0.6"/>
+
+  <!-- Circuit Trace Ring with Terminal Pads -->
+  <circle cx="200" cy="200" r="145" stroke="#334155" stroke-width="1.5" stroke-dasharray="6 12" opacity="0.5"/>
+  <circle cx="200" cy="55" r="4" fill="#38BDF8"/>
+  <circle cx="200" cy="345" r="4" fill="#38BDF8"/>
+  <circle cx="55" cy="200" r="4" fill="#22D3EE"/>
+  <circle cx="345" cy="200" r="4" fill="#22D3EE"/>
+  
+  <!-- Circuit Traces Branching Out -->
+  <path d="M200 55 L200 90 L240 110" stroke="#38BDF8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+  <circle cx="240" cy="110" r="3" fill="#22D3EE"/>
+
+  <path d="M55 200 L95 200 L115 170" stroke="#38BDF8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+  <circle cx="115" cy="170" r="3" fill="#22D3EE"/>
+
+  <path d="M345 200 L305 200 L285 230" stroke="#38BDF8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+  <circle cx="285" cy="230" r="3" fill="#22D3EE"/>
+
+  <path d="M200 345 L200 310 L160 290" stroke="#38BDF8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+  <circle cx="160" cy="290" r="3" fill="#22D3EE"/>
+
+  <!-- Hexagonal Engineering Shield Frame -->
+  <polygon points="200,85 305,145 305,255 200,315 95,255 95,145" fill="url(#bgGrad)" stroke="#1E293B" stroke-width="3"/>
+  <polygon points="200,85 305,145 305,255 200,315 95,255 95,145" fill="none" stroke="url(#cyanBlue)" stroke-width="2.5" filter="url(#glowAvatar)"/>
+
+  <!-- Inner Concentric Hexagon -->
+  <polygon points="200,105 285,155 285,245 200,295 115,245 115,155" fill="none" stroke="#334155" stroke-width="1" stroke-dasharray="4 4"/>
+
+  <!-- Engineering Signal / Sine Wave Accents -->
+  <path d="M125 240 Q145 220 165 240 T205 240 T245 240 T275 240" stroke="#22D3EE" stroke-width="1.8" fill="none" opacity="0.4"/>
+
+  <!-- Central Monogram "MA" Styled with Circuit Nodes -->
+  <!-- "M" -->
+  <path d="M142 225 L142 165 L165 195 L188 165 L188 225" stroke="url(#cyanBlue)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" filter="url(#glowAvatar)"/>
+  <circle cx="142" cy="165" r="4.5" fill="#38BDF8"/>
+  <circle cx="188" cy="165" r="4.5" fill="#38BDF8"/>
+  <circle cx="165" cy="195" r="4.5" fill="#22D3EE"/>
+
+  <!-- "A" -->
+  <path d="M212 225 L232 165 L252 225 M218 206 L246 206" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="232" cy="165" r="4.5" fill="#38BDF8"/>
+
+  <!-- Status Indicator Badge (Integrated) -->
+  <g transform="translate(145, 275)">
+    <rect width="110" height="26" rx="13" fill="#0B132B" stroke="#059669" stroke-width="1.2"/>
+    <circle cx="16" cy="13" r="4.5" fill="#10B981"/>
+    <circle cx="16" cy="13" r="7" stroke="#10B981" stroke-width="1.5" opacity="0.5"/>
+    <text x="30" y="17" fill="#E2E8F0" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="600" letter-spacing="0.5">ENGINEER</text>
+  </g>
+</svg>

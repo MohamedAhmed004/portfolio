@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Primary Meta Tags -->
+  <title>Mohamed Ahmed | Aspiring Communication &amp; Electronics Engineer</title>
+  <meta name="title" content="Mohamed Ahmed | Aspiring Communication &amp; Electronics Engineer" />
+  <meta name="description" content="Mohamed Ahmed is an aspiring Communication and Electronics Engineer passionate about cybersecurity, networking, programming, MATLAB, and CMOS circuit design. Explore verified projects, credentials, and engineering workflows." />
+  <meta name="keywords" content="Mohamed Ahmed, Communication and Electronics Engineer, Cybersecurity, Computer Networking, MATLAB, Circuit Design, OrCAD Capture, PSpice, Huawei eNSP, CCNA, HCIA-Datacom, Phish-Shield, MTI University, Cairo Egypt" />
+  <meta name="author" content="Mohamed Ahmed" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0B0F17" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mohamed-ahmed.github.io/" />
+  <meta property="og:title" content="Mohamed Ahmed | Aspiring Communication &amp; Electronics Engineer" />
+  <meta property="og:description" content="Engineering Ideas Into Practical Solutions. Bridging hardware design, network architectures, and modern software to develop robust, efficient technical systems." />
+  <meta property="og:image" content="assets/images/mohamed-avatar.svg" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://mohamed-ahmed.github.io/" />
+  <meta property="twitter:title" content="Mohamed Ahmed | Aspiring Communication &amp; Electronics Engineer" />
+  <meta property="twitter:description" content="Engineering Ideas Into Practical Solutions. Hardware design, network engineering, and machine learning threat detection." />
+  <meta property="twitter:image" content="assets/images/mohamed-avatar.svg" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              800: '#111827',
+              900: '#0F172A',
+              950: '#0A0E17',
+            },
+            electric: {
+              500: '#0284C7',
+              600: '#0369A1',
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'Consolas', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- JSON-LD Structured Data (Person) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Mohamed Ahmed",
+    "alternateName": "Mohamed Ahmed Fathy Abdelaziz",
+    "jobTitle": "Aspiring Communication and Electronics Engineer",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Cairo",
+      "addressCountry": "Egypt"
+    },
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "name": "MTI University"
+    },
+    "knowsAbout": [
+      "Communication Engineering",
+      "Electronics Engineering",
+      "Cybersecurity",
+      "Computer Networking",
+      "MATLAB",
+      "CMOS Circuit Design",
+      "Digital Logic Design"
+    ]
+  }
+  </script>
+</head>
+<body class="bg-[#0B0F17] text-slate-100 min-h-screen relative selection:bg-cyan-500 selection:text-black">
+
+  <!-- Interactive Subtle Engineering Circuit Background -->
+  <canvas id="circuit-bg" aria-hidden="true"></canvas>
+
+  <!-- Navigation Bar Component Root -->
+  <div id="navbar-root"></div>
+
+  <!-- Main Website Body -->
+  <main class="relative z-10">
+    <div id="hero-root"></div>
+    <div id="about-root"></div>
+    <div id="skills-root"></div>
+    <div id="projects-root"></div>
+    <div id="workflow-root"></div>
+    <div id="contact-root"></div>
+  </main>
+
+  <!-- Footer Component Root -->
+  <div id="footer-root"></div>
+
+  <!-- Reusable Case Study Modal Dialog -->
+  <div 
+    id="project-modal" 
+    class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6 overflow-y-auto"
+    role="dialog" 
+    aria-modal="true" 
+    aria-labelledby="modal-title"
+  >
+    <!-- Dark Backdrop -->
+    <div id="modal-backdrop" class="fixed inset-0 bg-[#060910]/85 backdrop-blur-md transition-opacity"></div>
+
+    <!-- Modal Card Container -->
+    <div 
+      id="modal-container" 
+      class="relative w-full max-w-4xl bg-[#0B0F17] border border-slate-800 rounded-2xl shadow-2xl overflow-hidden my-8 z-10 max-h-[90vh] flex flex-col"
+    >
+      <!-- Modal Close Button Top -->
+      <button 
+        id="modal-close" 
+        aria-label="Close Case Study"
+        class="absolute top-4 right-4 z-20 w-9 h-9 rounded-xl bg-slate-900/90 border border-slate-700 text-slate-400 hover:text-white hover:bg-slate-800 flex items-center justify-center transition cursor-pointer"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+
+      <!-- Scrollable Content Body -->
+      <div id="modal-content" class="p-6 sm:p-8 overflow-y-auto space-y-6">
+        <!-- Injected dynamically by modal.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Modular Application Bootstrap -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

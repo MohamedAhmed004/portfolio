@@ -1,0 +1,25 @@
+{
+  "name": "mohamed-ahmed-portfolio",
+  "version": "1.0.0",
+  "description": "Professional Engineering Portfolio for Mohamed Ahmed — Aspiring Communication & Electronics Engineer",
+  "main": "index.html",
+  "scripts": {
+    "start": "node scripts/serve.js",
+    "serve:py": "python scripts/serve.py",
+    "test": "node scripts/verify.js"
+  },
+  "keywords": [
+    "portfolio",
+    "electronics",
+    "communication-engineering",
+    "cybersecurity",
+    "cmos",
+    "orcad",
+    "pspice",
+    "huawei-ensp",
+    "matlab",
+    "phishing-detection"
+  ],
+  "author": "Mohamed Ahmed <engmohamedahmed004@gmail.com>",
+  "license": "MIT"
+}
