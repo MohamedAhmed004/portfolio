@@ -134,9 +134,9 @@ git commit -m "feat: complete modern engineering portfolio for Mohamed Ahmed"
 ```
 
 ### Step 2: Push to GitHub
-Create a repository named `portfolio` (or `<your-username>.github.io`) on GitHub, then link and push:
+Create a repository named `portfolio` (or `MohamedAhmed004.github.io`) on GitHub, then link and push:
 ```bash
-git remote add origin https://github.com/<your-username>/portfolio.git
+git remote add origin https://github.com/MohamedAhmed004/portfolio.git
 git branch -M main
 git push -u origin main
 ```
@@ -148,7 +148,7 @@ git push -u origin main
 4. Set branch to `main` and folder to `/ (root)`.
 5. Click **Save**.
 6. Your portfolio will be live at:  
-   `https://<your-username>.github.io/portfolio/`
+   `https://MohamedAhmed004.github.io/portfolio/`
 
 ---
 

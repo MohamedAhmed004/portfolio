@@ -16,7 +16,7 @@ export const personalInfo = {
   whatsappUrl: "https://wa.me/201151915069",
   email: "engmohamedahmed004@gmail.com",
   linkedin: "https://linkedin.com/in/mohamed-ahmed-06525024b",
-  github: "https://github.com", // verified placeholder for GitHub profile
+  github: "https://github.com/MohamedAhmed004", // verified placeholder for GitHub profile
   cvPath: "assets/cv/Mohamed_Ahmed_Resume.pdf",
   status: "Available for Engineering Internships & Collaborative Projects",
   education: {
